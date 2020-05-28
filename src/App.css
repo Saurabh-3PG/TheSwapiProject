@@ -1,0 +1,233 @@
+body {
+    background: url(./picture/bg.png), url(./picture/bg_rev.png);
+    background-repeat: no-repeat;
+    background-position: top right, bottom -22% left -10%;
+    background-size: 20%;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+img{
+  max-width: 100%;
+  width: 100%;
+}
+#userpage {
+    margin-top: 72px;
+    padding: 0 24px;
+}
+#search button:active, #search button:focus {
+    box-shadow: none;
+    border: none;
+    background: rgba(0, 0, 0, 0);
+}
+ul {
+  padding: 0;
+  margin: 0 !important;
+  list-style: none;
+}
+header {
+  position: fixed;
+  box-shadow: 0px 2px 16px 0px #00000017;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 12px 12px;
+  z-index: 1000;
+}
+header img{
+  max-width: 110px;
+}
+#main{
+  padding-bottom: 80px;
+}
+.login-border {
+    height: 3px;
+    background: url(./picture/bg.png);
+    width: 100px;
+    margin: 0 auto;
+}
+#login{
+  min-height: 100vh;
+}
+form{
+  position: relative;
+}
+label{
+  display: none !important;
+}
+#login button{
+  background: url(./picture/bg.png);
+  background-position: right;
+  border: none;
+  display: block;
+  width: 100%;
+  margin: 24px auto;
+  padding: 12px 0;
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+#login h1{
+    font-weight: 900;
+}
+#login p{
+  margin: 18px 0 !important;
+}
+#login .form-group, #userpage .form-group{
+    margin-bottom: 0;
+}
+#login .form-control, #userpage .form-control{
+    border: none;
+    border-bottom: 2px solid rgba(255, 189, 47, 0.51);
+    border-radius: 0px;
+    height: calc(1.5em + .75rem + 14px);
+    background: rgba(0, 0, 0, 0);
+}
+#login .form-control:focus, #userpage .form-control:focus{
+  box-shadow: 0px 8px 12px rgba(194, 122, 40, 0.51);
+}
+button.search-button {
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    box-shadow: none;
+    width: 50px;
+    position: absolute;
+    right: 12px;
+    top: 0;
+    bottom: 0;
+}
+button.search-button:hover{
+  background: transparent;
+}
+#result .card {
+  border: none;
+  border-bottom: 2px solid rgb(255, 223, 144);
+  box-shadow: 0px 0px 0px rgb(255, 223, 144);
+  border-radius: 0;
+  padding: 40px 0;
+  background: transparent;
+}
+#result .card-header {
+  background: rgba(0, 0, 0, 0);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.prog {
+    margin-top: 36px;
+}
+#result .card-header p {
+    margin: 0;
+    line-height: 1;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(3, 34, 80);
+}
+#result .card-header p>span {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: rgb(175, 125, 86);
+}
+#result .card-header p#population{
+  margin-left: auto;
+}
+#result .card-body{
+  padding: 0;
+}
+#result .card-footer {
+    padding: 0;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+}
+#result .card-footer>span {
+  margin-right: 4px;
+  font-size: 0.9rem;
+  padding-top: 4px;
+  line-height: 1;
+}
+.logout-button,.logout-button:focus,.logout-button:hover {
+    background: rgb(0, 0, 0);
+    border: 2px solid rgb(251, 230, 99);
+    font-weight: bold;
+    margin-top: 8px;
+}
+.list-group-item:first-child {
+    border: none;
+}
+.card-body{
+  padding: 0;
+}
+ul#planetsDetails li {
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+    margin: 24px 0;
+    padding-right: 8px;
+    vertical-align: top;
+}
+ul#planetsDetails li>span {
+    display: flex;
+    width: 100%;
+    min-height: 200px;
+    box-shadow: 2px 4px 8px #0000001f;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1;
+}
+ul#planetsDetails li>span>span {
+    font-weight: 900;
+    font-size: 2.8rem;
+    line-height: 1;
+    margin-bottom: 8px;
+    color: rgb(30, 167, 63);
+}
+#peopleOnPlanets>li {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+#peopleOnPlanets>li>a {
+    border-radius: 50px;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.11);
+    margin-right: 8px;
+    display: block;
+    width: 50px;
+    height: auto;
+    padding: 10px;
+}
+span.peopleGender {
+    margin-right: 8px;
+}
+.nextButton {
+    background: rgb(176, 125, 82);
+    color: rgb(255, 255, 255);
+    font-weight: 900;
+    padding: 4px 16px;
+    border-radius: 40px;
+    margin-left: auto;
+    margin-top: 24px;
+    cursor: pointer;
+}
+.nextButton[data-active="false"] {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+@media(max-width:1023px){
+  ul#planetsDetails li {
+    width: 50%;
+    padding: 0;
+  }
+  #result .card-header{
+    display: block;
+  }
+  #result .card-header p{
+    margin-bottom: 12px;
+  }
+}
