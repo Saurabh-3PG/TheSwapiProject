@@ -11,7 +11,7 @@ img{
   width: 100%;
 }
 #userpage {
-    margin-top: 72px;
+    margin-top: 92px;
     padding: 0 24px;
 }
 #search button:active, #search button:focus {
@@ -150,10 +150,9 @@ button.search-button:hover{
   line-height: 1;
 }
 .logout-button,.logout-button:focus,.logout-button:hover {
-    background: rgb(0, 0, 0);
-    border: 2px solid rgb(251, 230, 99);
     font-weight: bold;
-    margin-top: 8px;
+    color: rgb(0, 0, 255);
+    cursor: pointer;
 }
 .list-group-item:first-child {
     border: none;

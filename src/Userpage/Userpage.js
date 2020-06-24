@@ -157,7 +157,7 @@ class Userpage extends Component {
             <Row id="userpage" className="justify-content-center">
                 <Col md={10}>
                     <Row id="search">
-                        <Col md={9}>
+                        <Col md={12}>
                             {/* <Form className="search-form"> */}
                             <Form.Group controlId="formBasicSearch">
                                 <Form.Label>Search</Form.Label>
@@ -168,11 +168,6 @@ class Userpage extends Component {
                                 <img src={search} alt="" />
                             </Button>
                             {/* </Form> */}
-                        </Col>
-                        <Col md={3}>
-                            <Button className="logout-button" onClick={this.props.logOut}>
-                                LogOut
-                            </Button>
                         </Col>
                     </Row>
                     <Row id="result">
@@ -220,8 +215,9 @@ class Userpage extends Component {
                         <div className="nextButton" data-active={this.state.next !== null} onClick={()=>this.apiCall(next)}>Next</div>
                     </Row>
                     <p>
-                        {this.props.userrr}
+                        Welcome {this.props.userrr}!
                     </p>
+                    <p className="logout-button" onClick={this.props.logOut}>LogOut</p>
                 </Col>
             </Row>
         );
