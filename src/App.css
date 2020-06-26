@@ -230,3 +230,124 @@ span.peopleGender {
     margin-bottom: 12px;
   }
 }
+/* Loading */
+#result .loading_heatMap .card {
+  border: none;
+  border-bottom: 2px solid rgb(255, 223, 144);
+  box-shadow: 0px 0px 0px rgb(255, 223, 144);
+  border-radius: 0;
+  padding: 40px 0;
+  background: transparent;
+}
+#result .loading_heatMap ul#planetsDetails li{
+    margin: 0!important;
+    padding: 8px 8px 4px;
+}
+
+#result .loading_heatMap ul#planetsDetails li>span {
+    display: flex;
+    width: 100%;
+    min-height: 200px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 0px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 4px 52px;
+    box-shadow: none !important;
+}
+#result .loading_heatMap .card-header {
+  background: rgba(0, 0, 0, 0);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+#result .loading_heatMap .prog {
+    margin-top: 36px;
+    background: rgba(40, 167, 69, 0.35);
+    border-radius: 15px;
+    padding: 2px;
+    box-shadow: none!important;
+    overflow: hidden;
+}
+#result .loading_heatMap .prog span {
+    width: 22%;
+    height: 10px;
+    border-radius: 15px;
+    display: block;
+    background: rgba(40, 167, 69, 0.5);
+    transition: ease all 1s;
+    animation: prog 5s infinite;
+}
+@keyframes prog {
+  from {width: 0%;}
+  to {width: 100%;}
+}
+#result .loading_heatMap ul#peopleOnPlanets>li {
+    margin-right: 8px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: rgba(40, 167, 69, 0.20);
+    margin-bottom: 0 !important;
+    overflow: hidden;
+    padding: 0px;
+    animation: blinky 5s infinite;
+}
+
+#result .loading_heatMap ul#peopleOnPlanets>li>span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    display: block;
+    background: rgba(40, 167, 69, 0.5);
+    transition: ease all 1s;
+}
+@keyframes blinky {
+  from {padding: 0px;}
+  to {padding: 24px;}
+}
+#result .loading_heatMap .card-header p {
+    margin: 0;
+    line-height: 1;
+    font-size: 0rem;
+    font-weight: 500;
+    color: rgb(3, 34, 80);
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 4px 52px;
+    min-height: 18px;
+}
+#result .loading_heatMap .card-header p>span {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: rgb(175, 125, 86);
+}
+#result .loading_heatMap .card-header p#population{
+  margin-left: auto;
+}
+#result .loading_heatMap .card-body{
+  padding: 0;
+}
+#result .loading_heatMap .card-footer {
+    padding: 0;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+}
+#result .loading_heatMap .card-footer>span {
+  margin-right: 4px;
+  font-size: 0rem;
+  border-radius: 15px;
+  padding: 4px 52px;
+  opacity: .35;
+}
+#result .loading_heatMap ul#peopleOnPlanets {
+    margin-top: 24px !important;
+}

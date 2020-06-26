@@ -4,6 +4,7 @@ import axios from 'axios';
 import search from '../picture/search.png';
 import residents from '../picture/residents.jpg';
 import Planets from '../Planets/Planets';
+import Loading from '../Loading/Loading';
 // import SearchResults from 'react-filter-search';
 class Userpage extends Component {
     constructor(props) {
@@ -33,9 +34,15 @@ class Userpage extends Component {
                         name: result.data.results.name,
                         next: result.data.next,
                         prev: result.data.previous,
+                        isLoading: false
                     });
                 }
-            )
+            ).catch(err => {
+              this.setState({
+                isLoading: true
+              })
+              console.log(`${err} whilst contacting the quote API.`)
+            })
     }
     componentDidMount() {
         this.apiCall("https://swapi.dev/api/planets/?search=");
@@ -151,7 +158,7 @@ class Userpage extends Component {
     };
 
     render(props) {
-        const { planets, value, next } = this.state;
+        const { planets, value, next, isLoading } = this.state;
         let noOfPeople = [];
         return (
             <Row id="userpage" className="justify-content-center">
@@ -171,45 +178,45 @@ class Userpage extends Component {
                         </Col>
                     </Row>
                     <Row id="result">
-                        {
-                            planets.map(el => {
-                                let currentValue
-                                if ((el.population !== 'unknown')){
-                                    noOfPeople.push(el.population)
-                                    currentValue = el.population;
-                                }
-                                else{
-                                    noOfPeople.push(0)
-                                    currentValue = 0; 
-                                }
-                                let maxValue = Math.max(...noOfPeople);
-                                let percentage = (currentValue / maxValue) * 100;
-                                //console.log(percentage,currentValue, maxValue, noOfPeople)
-                                return (
-                                    <Planets
-                                        key={el.name}
-                                        name={el.name}
-                                        population={el.population}
-                                        rotation_period={el.rotation_period}
-                                        orbital_period={el.orbital_period}
-                                        diameter={el.diameter}
-                                        surface_water={el.surface_water}
-                                        climate={el.climate}
-                                        gravity={el.gravity}
-                                        terrain={el.terrain}
-                                        percentage={percentage}
-                                        residents={
-                                            el.residents.map((resident, index) => (
-                                                <li className="people" key={index}>
-                                                    <a href={resident} target="blank" data-residents-id={index}>
-                                                        <img src={residents} alt="resident" />
-                                                    </a>
-                                                </li>
-                                            ))}
-                                    />
-                                )
-                            })
-                        }
+                      {
+                        isLoading ? <Loading /> : planets.map(el => {
+                                    let currentValue
+                                    if ((el.population !== 'unknown')){
+                                        noOfPeople.push(el.population)
+                                        currentValue = el.population;
+                                    }
+                                    else{
+                                        noOfPeople.push(0)
+                                        currentValue = 0; 
+                                    }
+                                    let maxValue = Math.max(...noOfPeople);
+                                    let percentage = (currentValue / maxValue) * 100;
+                                    //console.log(percentage,currentValue, maxValue, noOfPeople)
+                                    return (
+                                        <Planets
+                                            key={el.name}
+                                            name={el.name}
+                                            population={el.population}
+                                            rotation_period={el.rotation_period}
+                                            orbital_period={el.orbital_period}
+                                            diameter={el.diameter}
+                                            surface_water={el.surface_water}
+                                            climate={el.climate}
+                                            gravity={el.gravity}
+                                            terrain={el.terrain}
+                                            percentage={percentage}
+                                            residents={
+                                                el.residents.map((resident, index) => (
+                                                    <li className="people" key={index}>
+                                                        <a href={resident} target="blank" data-residents-id={index}>
+                                                            <img src={residents} alt="resident" />
+                                                        </a>
+                                                    </li>
+                                                ))}
+                                        />
+                                    )
+                                })
+                      }
                     </Row>
                     <Row>
                         <div className="nextButton" data-active={this.state.next !== null} onClick={()=>this.apiCall(next)}>Next</div>
